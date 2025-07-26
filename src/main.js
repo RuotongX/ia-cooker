@@ -30,12 +30,12 @@ class GameScene extends Phaser.Scene {
 
     preload() {
         // 加载游戏资源
-        this.load.image('cooker', 'public/cooker.png');
-        this.load.image('customer-wait', 'public/customer-wait.png');
-        this.load.image('food', 'public/food.png');
-        this.load.image('shit','public/shit.png');
-        this.load.image('customer-satisfied', 'public/customer-satisfied.png');
-        this.load.image('customer-disappointed', 'public/customer-disappointed.png');
+        this.load.image('cooker', 'assets/cooker.png');
+        this.load.image('customer-wait', 'assets/customer-wait.png');
+        this.load.image('food', 'assets/food.png');
+        this.load.image('shit','assets/shit.png');
+        this.load.image('customer-satisfied', 'assets/customer-satisfied.png');
+        this.load.image('customer-disappointed', 'assets/customer-disappointed.png');
 
         // 创建星空背景
         this.load.image('starfield', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');
