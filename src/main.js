@@ -36,6 +36,7 @@ class GameScene extends Phaser.Scene {
         this.load.image('shit','assets/shit.png');
         this.load.image('customer-satisfied', 'assets/customer-satisfied.png');
         this.load.image('customer-disappointed', 'assets/customer-disappointed.png');
+        this.load.image('qq-group', 'assets/qq-group.jpg');
 
         // 创建星空背景
         this.load.image('starfield', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==');
@@ -117,6 +118,17 @@ class GameScene extends Phaser.Scene {
             color: '#ffffff',
             fontFamily: 'Arial'
         });
+        this.add.text(20, 180, '欢迎加入IA吧QQ群谢谢喵', {
+            fontSize: '18px',
+            color: '#ffffff',
+            fontFamily: 'Arial'
+        });
+        this.add.text(20, 220, '112471442', {
+            fontSize: '18px',  
+            color: '#ffffff',
+            fontFamily: 'Arial'
+        });
+        this.add.image(20, 260, 'qq-group').setScale(0.15).setOrigin(0, 0);
         //指示器显示
         this.add.text(this.cameras.main.width / 2-200, this.cameras.main.height - 180, '下一个食物：', {
             fontSize: '18px',
