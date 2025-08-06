@@ -367,15 +367,40 @@ class GameScene extends Phaser.Scene {
             fontFamily: 'Arial'
         }).setOrigin(0.5);
         
-        this.add.text(this.cameras.main.width / 2, this.cameras.main.height / 2 + 70, '点击重新开始', {
-            fontSize: '18px',
-            color: '#ffffff',
-            fontFamily: 'Arial'
-        }).setOrigin(0.5);
-        
-        // 重启游戏
-        this.input.once('pointerdown', () => {
-          
+        const buttonBg = this.add.rectangle(
+            this.cameras.main.width / 2,
+            this.cameras.main.height / 2 + 90,
+            200, 50, 
+            0xFFC7C2, 
+            1
+        ).setInteractive();
+
+        const buttonText = this.add.text(
+            this.cameras.main.width / 2, 
+            this.cameras.main.height / 2 + 90, 
+            '点击重新开始', 
+            {
+                fontSize: '18px',
+                color: '#e4f8ffff',
+                fontFamily: 'Arial'
+            }
+        ).setOrigin(0.5);
+
+        // 添加交互效果
+        buttonBg.on('pointerover', () => {
+            buttonBg.fillColor = 0xFFD2CC; // 悬停时变亮
+        });
+
+        buttonBg.on('pointerout', () => {
+            buttonBg.fillColor = 0xFFC7C2; // 移出时恢复
+        });
+
+        buttonBg.on('pointerdown', () => {
+            buttonBg.fillColor = 0xFFA99C; // 按下时变暗
+        });
+
+        // 只有点击按钮才会重启游戏
+        buttonBg.on('pointerup', () => {
             this.scene.restart();
         });
     }
